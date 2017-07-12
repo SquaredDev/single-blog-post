@@ -22,18 +22,20 @@ const blogPost = {
 //   <div class="post">
 //     Sloths make very good habitats for other organisms, and a single sloth may be home to several species of moths, beetles, cockroaches, fungi, ciliates, and algae.*
 //   </div>
-//   <div class="site">
-//     Part of this content was pulled from <a href="https://en.wikipedia.org/wiki/Sloth">Wikipedia</a>
-//   </div>
+  // <div class="site">
+  //   Part of this content was pulled from <a href="https://en.wikipedia.org/wiki/Sloth">Wikipedia</a>
+  // </div>
 // </article>
 
 // Start Editing Here
+let container = document.querySelector('.container')
+let htmlString = '<article>' //start article
+  htmlString += `<h2>${blogPost.title}</h2>` //insert H2
+  htmlString += `<div class="meta"><span class="date">${blogPost.meta.date}</span></div>` //inserts date
+  htmlString += `<img src="${blogPost.post.image}">`
+  htmlString += `<div class="post">${blogPost.post.content}</div>` //inserts blogPost content
+  htmlString += `<div class="site">Part of this content was pulled from <a href="${blogPost.site.url}">${blogPost.site.name}</a></div>`
 
-let htmlString = "<article>"
+  htmlString = htmlString + '</article>'
 
-blogPost.forEach(function(item) {
-
-}
-
-
-htmlString = htmlString + '</article>'
+container.innerHTML = htmlString
